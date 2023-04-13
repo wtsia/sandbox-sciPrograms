@@ -1,0 +1,81 @@
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+import java.lang.Math.*;
+
+public class quizEight {
+	public static double questionOne(double amps, double diameter) {
+	      // some calculations and logic
+		double base = 10;
+		int exponent = -3;
+		return (3*amps*Math.pow(base, exponent))/(2*Math.PI*(diameter/2*Math.pow(base, exponent)));
+	}
+	
+	public static double questionTwo() {
+	      // some calculations and logic
+		System.out.println("TODO");
+		return 999.0;
+	}
+	
+	public static double questionThree() {
+	      // some calculations and logic
+		System.out.println("TODO");
+		return 999.0;
+	}
+	
+	public static double questionFour() {
+	      // some calculations and logic
+		System.out.println("TODO");
+		return 999.0;
+	}
+	
+	public static double questionFive() {
+	      // some calculations and logic
+		System.out.println("TODO");
+		return 999.0;
+	}
+	
+	public static void main(String Args[]) {
+		Scanner scnr = new Scanner(System.in);
+		String questionKey = "";
+		System.out.println("type q to exit");
+		
+		try {
+			while (true) {
+				System.out.println("Enter the Question keyword (choose J_0, heat_energy, bulb_power, potential_diff, and mag_ef :");
+				questionKey = scnr.toString();
+	
+				
+				System.out.println("You've chosen " + questionKey);
+				
+				switch (questionKey) {
+					case "J_0":
+						System.out.println("enter amps and diameter separated by a space i.e. 3.0 9.0");
+						double amps = scnr.nextDouble();
+						double diameter = scnr.nextDouble();
+						questionOne(amps, diameter);
+						break;
+					case "heat_energy":
+						
+						break;
+					case "bulb_power":
+						
+						break;
+					case "potential_diff":
+						
+						break;
+					case "mag_ef":
+						
+						break;
+					case "q":
+						return;
+				}
+			}
+		}	catch(IllegalStateException | NoSuchElementException e) {
+            // System.in has been closed
+            	System.out.println("System.in was closed; exiting");
+        }
+		
+		
+		
+	}
+}

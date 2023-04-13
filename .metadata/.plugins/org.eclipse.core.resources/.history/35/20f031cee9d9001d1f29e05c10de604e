@@ -1,0 +1,8 @@
+import java.util.Scanner;
+
+public class quizEight {
+	Scanner scnr = new Scanner(System.in);
+	
+	System.out.print("Enter the Question Num");
+	
+}

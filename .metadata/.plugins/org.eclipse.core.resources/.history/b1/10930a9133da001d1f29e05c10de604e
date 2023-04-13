@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class quizEight {
+	
+	public static double questionOne() {
+	      // some calculations and logic
+	}
+	
+	public static double questionTwo() {
+	      // some calculations and logic
+	}
+	
+	public static double questionThree() {
+	      // some calculations and logic
+	}
+	
+	public static double questionFour() {
+	      // some calculations and logic
+	}
+	
+	public static double questionFive() {
+	      // some calculations and logic
+	}
+	
+	public static void main() {
+		Scanner scnr = new Scanner(System.in);
+		boolean checkerNum = true;
+		String questionNum = "";
+		
+		while (checkerNum == true) {
+			System.out.println("Enter the Question keyword:");
+			questionNum = scnr.toString();
+			
+			System.out.println("You've chosen " + questionNum);
+		}
+		
+		
+		
+	}
+}

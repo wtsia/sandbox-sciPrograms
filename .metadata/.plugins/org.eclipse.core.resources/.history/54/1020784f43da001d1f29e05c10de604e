@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class quizEight {
+	public static void questionControl(String questionKey) {
+		switch (questionKey) {
+		
+		}
+	}
+	
+	public static double questionOne() {
+	      // some calculations and logic
+	}
+	
+	public static double questionTwo() {
+	      // some calculations and logic
+	}
+	
+	public static double questionThree() {
+	      // some calculations and logic
+	}
+	
+	public static double questionFour() {
+	      // some calculations and logic
+	}
+	
+	public static double questionFive() {
+	      // some calculations and logic
+	}
+	
+	public static void main() {
+		Scanner scnr = new Scanner(System.in);
+		boolean checkerNum = true;
+		String questionKey = "";
+		
+		while (checkerNum == true) {
+			System.out.println("Enter the Question keyword (choose J_0, heat_energy, bulb_power, :");
+			questionKey = scnr.toString();
+			
+			System.out.println("You've chosen " + questionKey);
+			questionControl(questionKey);
+		}
+		
+		
+		
+	}
+}

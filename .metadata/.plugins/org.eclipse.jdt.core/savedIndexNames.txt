@@ -1,0 +1,4 @@
+INDEX VERSION 1.132+/home/user/sandbox/java-sandbox/J23/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+3482627730.index
+2245001677.index
