@@ -76,34 +76,33 @@ public class exam2 {
 	
 	public static double questionTwelve(double resis, double capac, double pot_src, double t, double percent) {
 	      // some calculations and logic
-		return 1; //
+		double tau12 = resis*capac/1000;
+		double el12 = Math.log(percent/100)*tau12*-1;
+		double roe12 = capac*pot_src*(1-percent/100);
+		return 0.5*Math.pow(roe12, 2)/capac; //an_r_resistor_pot_src 24 48 15 0 79
 	}
-	/*
-	public static double questionFive() {
+	
+	public static double questionThirteen(double diameter, double current) {
 	      // some calculations and logic
-		return //return val;
+		double convertIn = diameter*.0254;
+		return current/(8.5*1.6*Math.PI/4*Math.pow(convertIn, 2))/1000; //the_diameter_of_a_copper 0.086 16.4
 	}
-	/*
-	public static double questionTwo() {
+	
+	public static double questionFourteen(double i_1, double i_2, double v_q) {
 	      // some calculations and logic
-		return //return val;
+		return v_q-3*i_2/1000;// in_the_figure_the_current 33 505 4.7
 	}
-	/*
-	public static double questionThree() {
+	
+	public static double questionFifteen(double i_0, double tau) {
 	      // some calculations and logic
-		return //return val;
+		return i_0*tau/1.6*10; // the_current_supplied 4.13 34.3
 	}
-	/*
-	public static double questionFour() {
+	
+	public static double questionSixteen(double x_start, double x_end, double x_density, double proton_release, double proton_mov) {
 	      // some calculations and logic
-		return //return val; //convert V to microV
+		
+		return ; // 
 	}
-	/*
-	public static double questionFive() {
-	      // some calculations and logic
-		return //return val;
-	}
-	*/
 	
 	public static void main(String Args[]) {
 		Scanner scnr = new Scanner(System.in);
@@ -113,7 +112,7 @@ public class exam2 {
 		System.out.println("type q to exit");
 		
 		while (checkerNum == true) {
-			System.out.println("Enter the Question keyword (two_elec_charges;a_charge_and_mass;a_particle_of_charge;a_cylindrical_capacitor;a_parallel_plate;in_the_figure_3;\nin_the_figure_all;an_air_filled_sphere;a_wire_is_made;resistors_of_value;an_r_resistor_init_pot;):");
+			System.out.println("Enter the Question keyword (two_elec_charges;a_charge_and_mass;a_particle_of_charge;a_cylindrical_capacitor;a_parallel_plate;in_the_figure_3;\nin_the_figure_all;an_air_filled_sphere;a_wire_is_made;resistors_of_value;an_r_resistor_init_pot;the_diameter_of_a_copper;in_the_figure_the_current;):");
 			
 			questionKey = scnr.next();
 			
@@ -219,43 +218,36 @@ public class exam2 {
 						double t12 = scnr.nextDouble();
 						double percent12 = scnr.nextDouble();
 						System.out.println(questionTwelve(resis12, capac12, pot_src12, t12, percent12));
-						break;/*
-					case "CASE 1":
-						System.out.println("CASE INSTRUCTIONS");
-						double resivity4 = scnr.nextDouble();
-						double currentDensity = scnr.nextDouble();
-						System.out.println(questionFive(resivity4, currentDensity));
 						break;
-						/*
-					case "battery_voltage":
-						System.out.println("CASE INSTRUCTIONS");
-						double watt = scnr.nextDouble();
-						double voltage = scnr.nextDouble();
-						double time = scnr.nextDouble();
-						System.out.println(questionTwo(watt, voltage, time));
-						break;/*
-					case "CASE 1":
-						System.out.println("CASE INSTRUCTIONS");
-						double volts = scnr.nextDouble();
-						double watts = scnr.nextDouble();
-						double currentPercent = scnr.nextDouble();
-						System.out.println(questionThree(volts, watts, currentPercent));
-						break;/*
-					case "CASE 1":
-						System.out.println("CASE INSTRUCTIONS");
-						double resivity = scnr.nextDouble();
+					case "the_diameter_of_a_copper":
+						System.out.println("(abs) give double diameter, double current");
+						double diameter = scnr.nextDouble();
 						double current = scnr.nextDouble();
-						double radius = scnr.nextDouble();
-						double length = scnr.nextDouble();
-						System.out.println(questionFour(resivity, current, radius, length));
-						break;/*
-					case "CASE 1":
-						System.out.println("CASE INSTRUCTIONS");
-						double resivity4 = scnr.nextDouble();
-						double currentDensity = scnr.nextDouble();
-						System.out.println(questionFive(resivity4, currentDensity));
+						System.out.println(questionThirteen(diameter, current));
 						break;
-						*/
+						
+					case "in_the_figure_the_current":
+						System.out.println("(abs) give double i_1, double i_2, double v_q");
+						double i14_1 = scnr.nextDouble();
+						double i14_2 = scnr.nextDouble();
+						double v14_q = scnr.nextDouble();
+						System.out.println(questionFourteen(i14_1, i14_2, v14_q));
+						break;
+					case "the_current_supplied":
+						System.out.println("(abs) give double i_0, double tau");
+						double i15_0 = scnr.nextDouble();
+						double tau15 = scnr.nextDouble();
+						System.out.println(questionFifteen(i15_0, tau15));
+						break;
+					case "a_line_of_charge_is_placed":
+						System.out.println("(abs) give double x_start, double x_end, double x_density, double proton_release, double proton_mov");
+						double x16_start= scnr.nextDouble();
+						double x16_end = scnr.nextDouble();
+						double x16_density = scnr.nextDouble();
+						double proton16_release = scnr.nextDouble();
+						double proton16_mov = scnr.nextDouble();
+						System.out.println(questionSixteen(x16_start, x16_end, x16_density, proton16_release, proton16_mov));
+						break;
 					case "q":
 						checkerNum = false;
 						return;
