@@ -10,14 +10,17 @@ public class exam2 {
 	public static double questionTwo(double q2_1, double m2_1, double r2_0, double d2) {
 	      // some calculations and logic
 		double lambda2 = r2_0 + d2/100;
-		double quantity = 1/r2_0 - 1/lambda2;
-		double numerator = 9*1.6*q2_1*2*quantity;
-		return Math.sqrt(numerator/9.1)*1000;
+		double quantity2 = 1/r2_0 - 1/lambda2;
+		double numerator2 = 9*1.6*q2_1*2*quantity2;
+		return Math.sqrt(numerator2/9.1)*1000;
 	}
-	/*
-	public static double questionThree() {
+	
+	public static double questionThree(double r_0, double v_0, double lambda, double q, double m) {
 	      // some calculations and logic
-		return //return val;
+		double num3 = m*Math.pow(v_0, 2)*Math.PI*2*8.85;
+		double den3 = 2*q*lambda;
+		double rhs3 = num3/den3/-1000;
+		return r_0*Math.exp(rhs3);
 	}
 	/*
 	public static double questionFour() {
@@ -99,7 +102,7 @@ public class exam2 {
 		System.out.println("type q to exit");
 		
 		while (checkerNum == true) {
-			System.out.println("Enter the Question keyword (two_elec_charges;a_charge_and_mass;):");
+			System.out.println("Enter the Question keyword (two_elec_charges;a_charge_and_mass;a_particle_of_charge;):");
 			
 			questionKey = scnr.next();
 			
@@ -123,13 +126,15 @@ public class exam2 {
 						double r2_0 = scnr.nextDouble();
 						double d2 = scnr.nextDouble();
 						System.out.println(questionTwo(q2_1, m2_1, r2_0, d2));
-						break;/*
-					case "CASE 1":
-						System.out.println("CASE INSTRUCTIONS");
-						double volts = scnr.nextDouble();
-						double watts = scnr.nextDouble();
-						double currentPercent = scnr.nextDouble();
-						System.out.println(questionThree(volts, watts, currentPercent));
+						break;
+					case "a_particle_of_charge":
+						System.out.println("(abs) Give double r_0, double v_0, double lambda, double q, double m;");
+						double r3_0 = scnr.nextDouble();
+						double v3_0 = scnr.nextDouble();
+						double lambda3 = scnr.nextDouble();
+						double q3 = scnr.nextDouble();
+						double m3 = scnr.nextDouble();
+						System.out.println(questionThree(r3_0, v3_0, lambda3, q3, m3));
 						break;/*
 					case "CASE 1":
 						System.out.println("CASE INSTRUCTIONS");
