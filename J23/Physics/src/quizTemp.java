@@ -54,34 +54,34 @@ public class quizTemp {
 						System.out.println(questionOne(emf, ivar, internalRes));
 						break;
 						/*
-					case "battery_voltage":
+					case "MY CASE":
 						System.out.println("CASE INSTRUCTIONS");
-						double watt = scnr.nextDouble();
-						double voltage = scnr.nextDouble();
-						double time = scnr.nextDouble();
-						System.out.println(questionTwo(watt, voltage, time));
+						double var1 = scnr.nextDouble();
+						double var2 = scnr.nextDouble();
+						double var3 = scnr.nextDouble();
+						System.out.println(questionTwo(var1, var2, var3));
 						break;/*
-					case "CASE 1":
+					case "MY CASE":
 						System.out.println("CASE INSTRUCTIONS");
-						double volts = scnr.nextDouble();
-						double watts = scnr.nextDouble();
-						double currentPercent = scnr.nextDouble();
-						System.out.println(questionThree(volts, watts, currentPercent));
+						double var1 = scnr.nextDouble();
+						double var2 = scnr.nextDouble();
+						double var3 = scnr.nextDouble();
+						System.out.println(questionTwo(var1, var2, var3));
 						break;/*
-					case "CASE 1":
+					case "MY CASE":
 						System.out.println("CASE INSTRUCTIONS");
-						double resivity = scnr.nextDouble();
-						double current = scnr.nextDouble();
-						double radius = scnr.nextDouble();
-						double length = scnr.nextDouble();
-						System.out.println(questionFour(resivity, current, radius, length));
+						double var1 = scnr.nextDouble();
+						double var2 = scnr.nextDouble();
+						double var3 = scnr.nextDouble();
+						System.out.println(questionTwo(var1, var2, var3));
 						break;/*
-					case "CASE 1":
+					case "MY CASE":
 						System.out.println("CASE INSTRUCTIONS");
-						double resivity4 = scnr.nextDouble();
-						double currentDensity = scnr.nextDouble();
-						System.out.println(questionFive(resivity4, currentDensity));
-						break;
+						double var1 = scnr.nextDouble();
+						double var2 = scnr.nextDouble();
+						double var3 = scnr.nextDouble();
+						System.out.println(questionTwo(var1, var2, var3));
+						break;/*
 						*/
 					case "q":
 						checkerNum = false;
