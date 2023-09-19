@@ -1,0 +1,17 @@
+public class ProductSorter {
+    public static void sortProducts(Product[] products, String sortBy) {
+        if (sortBy.equalsIgnoreCase("Name")) {
+            // Sort products by name using Quicksort
+            quickSortByName(products, 0, products.length - 1);
+        } else if (sortBy.equalsIgnoreCase("Rating")) {
+            // Sort products by rating using Quicksort
+            quickSortByRating(products, 0, products.length - 1);
+        } else if (sortBy.equalsIgnoreCase("Price")) {
+            // Sort products by price using Quicksort
+            quickSortByPrice(products, 0, products.length - 1);
+        }
+    }
+
+    // Implement Quicksort methods for each criteria (Name, Rating, Price)
+    // ...
+}
