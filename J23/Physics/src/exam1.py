@@ -87,10 +87,13 @@ def method10():
     print(round(result, 2))
 
 def method11(): # QUIZ 4.3
-    print("give var1, var2")
-    var1 = float(input("var1: "))
-    var2 = float(input("varr2: "))
-    result = var1*var2
+    print("give outerRad, innerRad, netDensity, chgDensity")
+    outerRad = float(input("outerRad: "))
+    innerRad = float(input("innerRad: "))
+    netDensity = float(input("netDensity: "))
+    chgDensity = float(input("chgDensity: "))
+    tempResult = abs(chgDensity * 4 * math.pi * (innerRad / 100) ** 2)
+    result = netDensity * 4 * math.pi * (outerRad / 100) ** 2 - tempResult
     print(result)
 
 def method12():
@@ -102,17 +105,23 @@ def method12():
     #print(result)
 
 def method13(): # QUIZ 4.5
-    print("give var1, var2")
-    var1 = float(input("var1: "))
-    var2 = float(input("varr2: "))
-    result = var1*var2
-    print(result)
+    print("give lambda1, lambda2, separation")
+    lambda1 = float(input("lambda1: "))
+    lambda2 = float(input("lambda2: "))
+    separation = float(input("separation: "))
+    separation = separation / 200
+    tmp1 = 2 * lambda1 * 9 / separation
+    tmp2 = 2 * lambda2 * 9 / separation
+    print(tmp1 - tmp2)
 
 def method14(): # QUIZ 4.2
-    print("give var1, var2")
-    var1 = float(input("var1: "))
-    var2 = float(input("varr2: "))
-    result = var1*var2
+    print("give radiusA, radiusB, lambda1, lambda2, point")
+    radiusA = float(input("radiusA: "))
+    radiusB = float(input("radiusB: "))
+    lambda1 = float(input("lambda1: "))
+    lambda2 = float(input("lambda2: "))
+    point = float(input("point: "))
+    result = 2 * 9 * -lambda2 / point * 1000
     print(result)
 
 def method15():
