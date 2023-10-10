@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.Math.*;
 
-public class quizNine {
+public class quiz9 {
 	public static double questionOne(double emf, double ivar, double internalRes) {
 	      // some calculations and logic
 		double tmpvar = emf/ivar;

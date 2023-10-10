@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.Math.*;
 
-public class quizTen {
+public class quiz10 {
 	public static double questionOne(double b_x, double b_y, double b_z, double current, double length) {
 	      // some calculations and logic
 		return current*Math.sqrt(Math.pow(length*b_y, 2) + Math.pow(length*b_z, 2));

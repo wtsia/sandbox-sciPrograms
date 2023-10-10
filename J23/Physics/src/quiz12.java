@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.Math.*;
 
-public class quizTwelve {
+public class quiz12 {
 	public static double questionOne(double distance, double current) {
 	      // some calculations and logic
 		double tmpvar = 4*Math.PI*Math.pow(10, -7)*current/(2*Math.PI*distance*Math.pow(10, -2));

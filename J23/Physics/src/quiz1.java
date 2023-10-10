@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.Math.*;
 
-public class quizOne {
+public class quiz1 {
 	public static double questionOne(double initElecRemoved) {
 		return initElecRemoved*1.602*100;
 	} // elec_rem 6.87 res: 1100.574
