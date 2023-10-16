@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.Math.*;
 
-public class quizFourteen {
+public class quiz14 {
 	public static double questionOne(double resistor, double capacitor, double inductor, double voltageSrc, double rmsVoltage) {
 	      // some calculations and logic
 		double rSq1 = Math.pow(resistor, 2);

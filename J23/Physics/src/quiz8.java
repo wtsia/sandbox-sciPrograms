@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.Math.*;
 
-public class quizEight {
+public class quiz8 {
 	public static double questionOne(double amps, double diameter) {
 	      // some calculations and logic
 		double base = 10;
