@@ -20,16 +20,17 @@ public class quiz9 {
 		return Math.pow((voltage/(r1 + r2)),2)*r2;
 	}
 	
-	public static double questionFour(double vVar, double rVar, double capVar, double rateDenominator) {
+	public static double questionFour(double vVar, double rVar, double capVar,  double rateDenominator) {
+		// some calculations and logic
+		System.out.println(vVar + " " + rVar + " " + capVar + " " + rateDenominator);
+	  return vVar/rVar * (rateDenominator - 1)/rateDenominator;
+  }
+	
+	public static double questionFive(double vVar, double rVar, double capVar, double rateDenominator) {
 	      // some calculations and logic
 		return vVar/(rVar * Math.pow(10, 3) * rateDenominator) * Math.pow(10, 6);
-	}/*
-	
-	public static double questionFive() {
-	      // some calculations and logic
-		return //return val;
 	}
-	*/
+	
 	
 	public static void main(String Args[]) {
 		Scanner scnr = new Scanner(System.in);
@@ -39,7 +40,7 @@ public class quiz9 {
 		System.out.println("type q to exit");
 		
 		while (checkerNum == true) {
-			System.out.println("Enter the Question keyword (power_dissipated, battery_voltage, pow_resistor, current_circuit):");
+			System.out.println("Enter the Question keyword (power_dissipated, battery_voltage, pow_resistor, current_circuit, curr_cir_2):");
 			
 			questionKey = scnr.next();
 			
@@ -75,20 +76,21 @@ public class quiz9 {
 						System.out.println(questionThree(r_1, r_2, r_3, voltage));
 						break;
 					case "current_circuit":
-						System.out.println("Give (doubles) vVar (pot, source), rVar (resistor), capVar, and rateDenominator");
+						System.out.println("Give (doubles) vVar (pot, source), rVar (resistor), capVar, and rateDenominator (give denominator i.e. 1/7 = 7)");
 						double vVar = scnr.nextDouble();
 						double rVar = scnr.nextDouble();
 						double capVar = scnr.nextDouble();
 						double rateDenominator = scnr.nextDouble();
 						System.out.println(questionFour(vVar, rVar, capVar, rateDenominator));
-						break;/*
-					case "CASE 1":
-						System.out.println("CASE INSTRUCTIONS");
-						double resivity4 = scnr.nextDouble();
-						double currentDensity = scnr.nextDouble();
-						System.out.println(questionFive(resivity4, currentDensity));
 						break;
-						*/
+					case "curr_cir_2":
+						System.out.println("Give (doubles) vVar (pot, source), rVar (resistor), capVar, and rateDenominator (give denominator i.e. 1/7 = 7)");
+						double vVar2 = scnr.nextDouble();
+						double rVar2 = scnr.nextDouble();
+						double capVar2 = scnr.nextDouble();
+						double rateDenominator2 = scnr.nextDouble();
+						System.out.println(questionFive(vVar2, rVar2, capVar2, rateDenominator2));
+						break;
 					case "q":
 						checkerNum = false;
 						return;
