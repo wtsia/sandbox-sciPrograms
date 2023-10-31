@@ -20,10 +20,9 @@ public class quiz9 {
 		return Math.pow((voltage/(r1 + r2)),2)*r2;
 	}
 	
-	public static double questionFour(double vVar, double rVar, double capVar) {
+	public static double questionFour(double vVar, double rVar, double capVar, double rateDenominator) {
 	      // some calculations and logic
-		double tmpVar = 1-capVar;
-		return vVar/rVar*tmpVar;
+		return vVar/(rVar * Math.pow(10, 3) * rateDenominator) * Math.pow(10, 6);
 	}/*
 	
 	public static double questionFive() {
@@ -40,7 +39,7 @@ public class quiz9 {
 		System.out.println("type q to exit");
 		
 		while (checkerNum == true) {
-			System.out.println("Enter the Question keyword (power_dissipated):");
+			System.out.println("Enter the Question keyword (power_dissipated, battery_voltage, pow_resistor, current_circuit):");
 			
 			questionKey = scnr.next();
 			
@@ -76,11 +75,12 @@ public class quiz9 {
 						System.out.println(questionThree(r_1, r_2, r_3, voltage));
 						break;
 					case "current_circuit":
-						System.out.println("Give (doubles) vVar (pot, source) and rVar (resistor) and capVar");
+						System.out.println("Give (doubles) vVar (pot, source), rVar (resistor), capVar, and rateDenominator");
 						double vVar = scnr.nextDouble();
 						double rVar = scnr.nextDouble();
 						double capVar = scnr.nextDouble();
-						System.out.println(questionFour(vVar, rVar, capVar));
+						double rateDenominator = scnr.nextDouble();
+						System.out.println(questionFour(vVar, rVar, capVar, rateDenominator));
 						break;/*
 					case "CASE 1":
 						System.out.println("CASE INSTRUCTIONS");
