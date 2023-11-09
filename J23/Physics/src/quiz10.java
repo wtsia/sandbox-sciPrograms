@@ -8,10 +8,10 @@ public class quiz10 {
 	}
 	
 	public static double questionTwo(double b_x2, double b_y2, double b_z2, double protonVel) {
-	      // some calculations and logic
-		double new_i = protonVel*b_y2*1.6/1000;
-		double new_j = protonVel*b_x2*1.6/100;
-		return 180+(new_j/new_i/10*180/Math.PI);
+	      // some calculations and logic -3.6 24.66 0 88   -8.47 32.91 0 107
+		double new_y = protonVel*b_x2*1.6/1000;
+		double new_x = protonVel*b_y2*-1.6/1000;
+		return 180 + (Math.atan(new_y/new_x) * 180 / Math.PI);
 	}
 	
 	public static double questionThree(double velocity_prot, double field_mag) {
