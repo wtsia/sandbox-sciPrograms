@@ -106,6 +106,7 @@ public class exam2 {
 		//System.out.println(tmp16_vmin1 + " " + tmp16_vmin2);
 		double del16_v = -9*x_density*(Math.log(tmp16_vmin1) - Math.log(tmp16_vmin2));
 		double pot16_eng = del16_v*1.6*10;
+		System.out.println("Values: " + x16_dev + " " + tmp16_vmin1 + " " +  tmp16_vmin2 + " " +  del16_v + " " +  pot16_eng);
 		return Math.sqrt(pot16_eng*-1*2/1.67*10000); // a_line_of_charge_is_placed -0.4 0 4.15 8.67 10
 		
 	}
@@ -118,7 +119,7 @@ public class exam2 {
 		System.out.println("type q to exit");
 		
 		while (checkerNum == true) {
-			System.out.println("Enter the Question keyword (two_elec_charges;a_charge_and_mass;a_particle_of_charge;a_cylindrical_capacitor;a_parallel_plate;in_the_figure_3;\nin_the_figure_all;an_air_filled_sphere;a_wire_is_made;resistors_of_value;an_r_resistor_init_pot;an_r_resistor_pot_src;the_diameter_of_a_copper;in_the_figure_the_current;the_current_supplied;a_line_of_charge_is_placed):");
+			System.out.println("\nEnter the Question keyword (two_elec_charges; a_charge_and_mass; a_particle_of_charge; a_cylindrical_capacitor;a_parallel_plate; in_the_figure_3; in_the_figure_all; an_air_filled_sphere; a_wire_is_made; resistors_of_value; an_r_resistor_init_pot; an_r_resistor_pot_src; the_diameter_of_a_copper; in_the_figure_the_current; the_current_supplied; a_line_of_charge_is_placed):");
 			
 			questionKey = scnr.next();
 			
@@ -282,7 +283,7 @@ public class exam2 {
 						double x16_density = scnr.nextDouble();
 						double proton16_release = scnr.nextDouble();
 						double proton16_mov = scnr.nextDouble();
-						System.out.println(questionSixteen(x16_start, x16_end, x16_density, proton16_release, proton16_mov) + "*10^2 ms^-1"); 
+						System.out.println(questionSixteen(x16_start, x16_end, x16_density, proton16_release, proton16_mov) + "(this is in 10^2 ms^-1)"); 
 						// a_line_of_charge_is_placed -0.4 0 9.63 4.04 10
 						// a_line_of_charge_is_placed -0.4 0 4.15 8.67 10
 						break;
