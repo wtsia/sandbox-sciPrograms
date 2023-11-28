@@ -11,28 +11,28 @@ def method2():
     print("give var1, var2")
     var1 = float(input("var1: "))
     var2 = float(input("varr2: "))
-    force_temp = var1*var2
+    result = var1*var2
     print(result)
 
 def method3():
     print("give var1, var2")
     var1 = float(input("var1: "))
     var2 = float(input("varr2: "))
-    force_temp = var1*var2
+    result = var1*var2
     print(result)
 
 def method4():
     print("give var1, var2")
     var1 = float(input("var1: "))
     var2 = float(input("varr2: "))
-    force_temp = var1*var2
+    result = var1*var2
     print(result)
 
 def method5():
     print("give var1, var2")
     var1 = float(input("var1: "))
     var2 = float(input("varr2: "))
-    force_temp = var1*var2
+    result = var1*var2
     print(result)
 
 
