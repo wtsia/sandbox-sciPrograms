@@ -221,7 +221,7 @@ public class exam3 {
 						// impedence12 7.89 307 13.4 67 17.2 
 						break;
 					case "arc_mag_eField13":
-						System.out.println("Give double current, double radiusArc");
+						System.out.println("Give double current, double radiusArc (make sure E^-6)");
 						double current13 = scnr.nextDouble();
 						double radiusArc13 = scnr.nextDouble();
 						System.out.println(questionThirteen(current13, radiusArc13) + "\n");
