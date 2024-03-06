@@ -26,7 +26,7 @@ def method3():
     var6 = float(input("final_vol: "))
     var6 = float(input("heating_vol: "))
     atmVAR = 1.013 * (10 ** 5)
-    w1 = atm * atmVAR * (pressure_vol2 - pressure_vol1)
+    w1 = var1 * atmVAR * (pressure_vol2 - pressure_vol1)
     w2 = 0
     w3 = final_vol * atmVAR * (pressure_vol1 - pressure_vol2) 
     w4 = 0
