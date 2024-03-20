@@ -50,7 +50,7 @@ def method5():
     temp = float(input("temp: "))
     mass = float(input("mass: "))
     r = 8.314/mass/1000
-    result = 3/2 * r / (6.022) * 330.3 * 10**7
+    result = 3/2 * (1.38064852) * (temp + 273.15) * 10
     print(result)
 
 
