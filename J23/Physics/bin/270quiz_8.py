@@ -9,7 +9,7 @@ def method1():
 
     # Re-calculating with the aim to confirm the analysis leading to 21 total fringes
     # Given values
-    lines_per_cm = 1761  # lines per centimeter
+    lines_per_cm = lines_per_cm  # lines per centimeter
     wavelength_nm = lambda_m  # wavelength in nanometers
 
     # Convert lines per cm to meters (for spacing d)
@@ -22,7 +22,7 @@ def method1():
     # Calculate the maximum order m for theta = 90 degrees, using sin(90) = 1
     m_max = d_m / wavelength_m
 
-    m_max = round(m_max)
+    m_max = math.floor(m_max)
 
 
     result = 2*m_max + 1
