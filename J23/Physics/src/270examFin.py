@@ -249,14 +249,30 @@ def method13():
     print("As percent:", result*100)
     print("")
 
-def method14(): #####################################
-    print("give resivity, current, radius, length")
-    resivity = float(input("resivity: "))
-    current = float(input("current: "))
-    radius = float(input("radius: "))
-    length = float(input("length: "))
-    resistance = (resivity * (10 ** -9) * length) / (math.pi * (radius / 100) ** 2)
-    result = current * resistance * 1000000
+def method14():
+    print("give mass, temp, pressure, initATM, molMass, c_p")
+    mass = float(input("mass: "))
+    temp = float(input("temp: "))
+    pressure = float(input("pressure: "))
+    initATM = float(input("length: "))
+    molMass = float(input("molMass: "))
+    C_p = float(input("c_p: "))
+    # Constants
+    R = 8.314  # J/(mol*K)
+
+    # Problem 1: Entropy Change for Isochoric Heating of an Ideal Diatomic Gas
+    m = mass  # grams
+    T_i = temp + 273.15  # Convert Celsius to Kelvin
+    P_i = pressure  # atm
+    P_f = initATM  # atm
+    M = molMass  # g/mol
+    C_v = C_p - R  # Calculate C_v
+
+    # Calculations
+    n = m / M  # number of moles
+    T_f = T_i * (P_f / P_i)  # final temperature using isochoric process
+    delta_S_gas = n * C_v * np.log(T_f / T_i)  # entropy change
+    result = delta_S_gas
     print(result)
     print("")
 
@@ -319,35 +335,43 @@ def method17():
     print(result)
     print("")
 
-def method18(): ######################################
-    print("give protonVel, b_x, b_y, b_z")
-    protonVel = float(input("protonVel: "))
-    b_x = float(input("b_x: "))
-    b_y = float(input("b_y: "))
-    b_z = float(input("b_z: "))
-    new_y = protonVel*b_x*1.6/1000
-    new_x = protonVel*b_y*-1.6/1000
-    result = 180 + (math.atan(new_y/new_x) * 180 / math.pi)
+def method18():
+    print("give placed, mag")
+    placed = float(input("placed: "))
+    mag = float(input("mag: "))
+    u = placed  # cm (object distance)
+    M_image = mag  # magnification
+    v = -M_image * u  # image distance
+    result = v
     print(result)
     print("")
 
-def method19(): ################################
-    print("give current, arcRadius, uniformField")
-    current = float(input("current: "))
-    arcRadius = float(input("arcRadius: "))
-    uniformField = float(input("uniformField: "))
-    h = math.sqrt(2 * ((arcRadius/100) ** 2))
-    result = current * h * uniformField
+def method19():
+    print("give front, magnification")
+    # Given values
+    d_o = float(input("front: "))
+    M = float(input("magnification: "))
+
+    # Calculate image distance using magnification formula
+    d_i = -M * d_o
+
+    # Calculate focal length using mirror equation
+    f = 1 / (1/d_o + 1/d_i)
+
+    result = f
+
     print(result)
     print("")
 
-def method20():####################################
-    print("give radius, distance, and centralAxisMagField")
-    radius = float(input("radius: "))
+def method20():
+    print("give tall, located, distance")
+    tall = float(input("tall: "))
+    located = float(input("located: "))
     distance = float(input("distance: "))
-    centralAxisMagField = float(input("centralAxisMagField: "))
-    tmpcurr = math.pi / 1000000 * distance**2
-    result = (centralAxisMagField / 1000000) * (2 * math.pi * distance / 1000) / ((4*math.pi / 10000000) * (tmpcurr)) 
+    d_o_3 = located  # Object distance in cm
+    d_i_3 = -1*distance  # Image distance (negative for virtual image)
+    focal_length_lens = 1 / (1/d_o_3 + 1/d_i_3)
+    result = focal_length_lens
     print(result)
     print("")
 
@@ -424,71 +448,134 @@ def method24():
     print(result)
     print("")
 
-def method25(): ###################################################
-    print("give a, b, i")
-    a = float(input("a: "))
-    b = float(input("b: "))
-    i = float(input("i: "))
-    result = 4 * math.pi * (10 ** -7) * i / 8 * (1/a - 1/b) * 1000000
+def method25():
+    print("give n, degrees")
+    n = float(input("n: "))
+    degrees = float(input("degrees: "))
+    theta_b = degrees * pi / 180  # Convert degrees to radians
+    n_water = n  # Refractive index of water
+    n_plastic = n_water * np.tan(theta_b)  # Refractive index of plastic
+    result = n_plastic
     print(result)
     print("")
 
-def method26(): #########################################
-    print("give turns, curr, radius, bx, by, bz")
-    turns = float(input("turns: "))
-    curr = float(input("curr: "))
-    radius = float(input("radius: "))
-    bx = abs(float(input("bx: ")))
-    by = abs(float(input("by: ")))
-    bz = abs(float(input("bz: ")))
-    area = math.pi*((radius/100) ** 2)
-    i = curr * turns * area * bx
-    j = curr * turns * area * by
-    torque =  (i ** 2) +  (j ** 2)
-    result = math.sqrt(torque)
+def method26():
+    print("give kg, temp, temp2, spec_heat")
+    # Given values
+    mass_lead1 = float(input("kg: ")) # kg
+    initial_temp_lead1 = float(input("temp: "))  # K
+    final_temp_lead = float(input("temp2: "))  # K
+    specific_heat_lead1 = float(input("spec_heat: "))  # J/kgK
+
+    # Let's re-calculate the total entropy change in a way that considers different parameters or corrects potential oversights.
+
+    # Constants for the calculations
+    specific_heat_lead = specific_heat_lead1  # J/kgK
+    mass_lead = mass_lead1  # kg
+    initial_temp_lead = initial_temp_lead1  # degrees Celsius
+    final_temp_lake = final_temp_lead  # degrees Celsius
+    initial_temp_lead_K = initial_temp_lead + 273.15  # Convert to Kelvin
+    final_temp_lake_K = final_temp_lake + 273.15  # Convert to Kelvin
+
+    # Calculating the change in entropy for the lead
+    delta_temp_lead = final_temp_lake - initial_temp_lead
+    delta_entropy_lead = mass_lead * specific_heat_lead * np.log(final_temp_lake_K / initial_temp_lead_K)
+
+    # Assume lake has large heat capacity so its change in temperature is negligible
+    # Calculating the heat transferred from lead to lake
+    q_lead = mass_lead * specific_heat_lead * (final_temp_lake_K - initial_temp_lead_K)  # Negative, heat lost by lead
+
+    # Entropy change for the lake
+    # Assume heat gained by lake is absorbed at a nearly constant temperature (large body of water)
+    delta_entropy_lake = -q_lead / final_temp_lake_K  # Negative of heat lost by lead to calculate gain by lake
+
+    # Total entropy change of the system
+    total_entropy_change_revised = delta_entropy_lead + delta_entropy_lake
+
+    result = total_entropy_change_revised
     print(result)
     print("")
 
-def method27(): #$###############
-    print("give hz, mh, percent")
-    hz = float(input("hz: "))
-    mh = float(input("mh: "))
-    percent = float(input("percent: "))
-    result = 10000000/(4*(math.pi**2)*(hz**2)*mh)*percent
+def method27():
+    print("give M_molMass, temp1, steel_mass, steel_temp, final_temp")
+    M_molMass = float(input("M_molMass: "))
+    temp1 = float(input("temp1: "))
+    steel_mass = float(input("steel_mass: "))
+    steel_temp = float(input("steel_temp: "))
+    f_temp = float(input("final_temp: "))
+
+    # Constants for neon gas mass calculation
+    mass_steel = steel_mass / 1000  # Convert to kg
+    initial_temp_neon = temp1 + 273.15  # Convert to Kelvin
+    initial_temp_steel = steel_temp + 273.15  # Convert to Kelvin
+    final_temp = f_temp + 273.15  # Convert to Kelvin
+
+    
+    specific_heat_steel = 502.4  # J/(kg*K)
+    R = 8.31446  # J/(K*mol)
+
+    molar_mass_neon = M_molMass / 1000
+    C_v_neon = (3 / 2) * R
+    Q_steel = mass_steel * specific_heat_steel * (final_temp - initial_temp_steel)
+    # Calculate number of moles of neon
+    n_neon = Q_steel / (C_v_neon * (final_temp - initial_temp_neon))
+    # Convert moles to mass
+    mass_neon = n_neon * molar_mass_neon * 1000  # Convert to grams
+    result = mass_neon*-1
+
     print(result)
     print("")
 
-def method28():#$###############
-    print("give turns, length, radius, turns2, length2, radius2")
-    turns = float(input("turns: "))
-    length = float(input("length: "))
-    radius = float(input("radius: "))
-    turns2 = float(input("turns2: "))
-    length2 = float(input("length2: "))
-    radius2 = float(input("radius2: "))
-    area2 = math.pi * ((radius2/100) ** 2)
-    result = mu_0 * turns * turns2 * area2 / (length / 100) * 1000
+def method28():
+    print("give ice_grams, alum_gram, celcius, unknown_grams, final_temp")
+    ice_grams = float(input("ice_grams: "))
+    alum_gram = float(input("alum_gram: "))
+    celcius = float(input("celcius: "))
+    unknown_grams = float(input("unknown_grams: "))
+    final_temp = float(input("final_temp: "))
+
+    mass_ice = ice_grams / 1000  # convert to kg
+    temp_initial_ice = 0 + 273.15  # melting point of ice in K
+    mass_aluminum = alum_gram / 1000  # convert to kg
+    temp_initial_aluminum = celcius + 273.15  # convert to K
+    mass_liquid = unknown_grams / 1000  # convert to kg
+    temp_final_system = final_temp + 273.15  # convert to K
+
+    c_aluminum = 900  # J/kg*K
+    c_water = 4186  # J/kg*K
+    latent_heat_fusion_water = 334000  # J/kg
+
+    c_liquid = (mass_aluminum * c_aluminum * (temp_final_system - temp_initial_aluminum) + mass_ice * latent_heat_fusion_water + mass_ice * c_water * (temp_final_system - temp_initial_ice)) / (mass_liquid * (temp_final_system - temp_initial_aluminum))
+    result = c_liquid*-1
     print(result)
     print("")
 
 def method29():#$###############
-    print("give turnCoil, diameter, magField, degree, percent, seconds")
-    turnCoil = float(input("turnCoil: "))
-    diameter = float(input("diameter: "))
-    magField = float(input("magField: "))
-    degree = float(input("degree: "))
-    percent = float(input("percent: "))/100
-    seconds = float(input("seconds: "))
-    result = abs(turnCoil*math.pi*((diameter/2)**2) * (percent*magField - magField) * math.cos((90-degree)/180*math.pi) / (seconds) / 10000)
+    print("give atomic_num")
+    atomic_num = float(input("atomic_num: "))
+
+    # Given values
+    n = 4  # Principal quantum number for the 3rd excited state
+    Z = atomic_num  # Atomic number for the ion
+
+    # Calculating the radius ratio r_n / a_0
+    radius_ratio = n**2 / Z
+    result = radius_ratio / 2 * 1.125
+
     print(result)
     print("")
 
-def method30():#$###############
-    print("give ohm1, ohm2, ohm3")
-    ohm1 = float(input("ohm1: "))
-    ohm2 = float(input("ohm2: "))
-    ohm3 = float(input("ohm3: "))
-    result = 1/(1/ohm1 + 1/ohm2 + 1/ohm3)
+def method30():
+    print("give maximum, degree")
+    maximum = float(input("maximum: "))
+    degree = float(input("degree: "))
+    lambda_nm = maximum  # wavelength in nm
+    theta_deg = degree  # angle in degrees
+    theta_rad = math.radians(theta_deg)  # convert degrees to radians
+    m = 4  # order of maximum
+    d = m * lambda_nm * 1e-9 / math.sin(theta_rad)  # grating spacing in meters
+    lines_per_cm = 1 / (d * 100)  # number of lines per cm
+    result = lines_per_cm
     print(result)
     print("")
 
@@ -503,11 +590,17 @@ def method31():
     print(result)
     print("")
 
-def method32(): #$###############
-    print("give rate, distance")
-    rate = float(input("rate: "))
-    distance = float(input("distance: "))
-    result = 2*rate/distance*10
+def method32():
+    print("give tall, located, mag")
+    tall = float(input("tall: "))
+    located = float(input("located: "))
+    mag = float(input("mag: "))
+    magnification = mag
+    d_i = -1*located  # cm (negative for virtual image)
+    # From magnification relation, d_o = -d_i / M
+    d_o = -d_i / magnification
+    focal_length = 1 / (1/d_o + 1/d_i)
+    result = focal_length
     print(result)
     print("")
 
